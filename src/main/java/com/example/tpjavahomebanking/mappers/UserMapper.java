@@ -1,5 +1,7 @@
 package com.example.tpjavahomebanking.mappers;
 
+import com.example.tpjavahomebanking.models.User;
+import com.example.tpjavahomebanking.models.dtos.UserDTO;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
@@ -26,7 +28,6 @@ public class UserMapper {
         dto.setPassword(user.getPassword());
         return dto;
     }
-
 
 
 }

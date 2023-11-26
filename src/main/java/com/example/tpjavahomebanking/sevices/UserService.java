@@ -1,5 +1,10 @@
 package com.example.tpjavahomebanking.sevices;
 
+import com.example.tpjavahomebanking.exceptions.UserNotExistsException;
+import com.example.tpjavahomebanking.mappers.UserMapper;
+import com.example.tpjavahomebanking.models.User;
+import com.example.tpjavahomebanking.models.dtos.UserDTO;
+import com.example.tpjavahomebanking.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -55,9 +60,7 @@ public class UserService {
     public UserDTO updateUser(Long id, UserDTO dto) {
         if (repository.existsById(id)){
             User userToModify = repository.findById(id).get();
-            // Validar qué datos no vienen en null para setearlos al objeto ya creado
 
-            // Logica del Patch
             if (dto.getName() != null){
                 userToModify.setName(dto.getName());
             }
@@ -87,6 +90,6 @@ public class UserService {
     }
 
     public User validateUserByEmail(UserDTO dto){
-        return repository.findByEmail(
-
+        return repository.findByEmail(dto.getEmail());
+    }
 }

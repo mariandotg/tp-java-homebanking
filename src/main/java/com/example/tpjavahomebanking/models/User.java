@@ -1,4 +1,4 @@
-package com.example.tpjavahomebanking.models.entity;
+package com.example.tpjavahomebanking.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
