@@ -14,18 +14,26 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "mail")
-    private String email;
-
-    @Column(name = "contrasena")
-    private String password;
-
-    @Column(name = "nombre")
+    @Column(name = "Nombre_de_Usuario")
     private String name;
 
-    @Column(name = "apellido")
-    private String surname;
+    @Column(name = "Mail")
+    private String email;
 
+    @Column(name = "Contrasena")
+    private String password;
+
+    @Column(name= "Dni")
     private String dni;
+
+    @Column(name="Fecha_de_nacimiento")
+    private String date;
+
+    @Column(name="Domicilio")
+    private String direction;
+
+    @Column(name="listado_de_cuentas")
+    private String count;
+
 
 }

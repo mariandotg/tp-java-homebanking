@@ -20,14 +20,11 @@ public class UserService {
     public List<UserDTO> getUsers(){
 
         List<User> users = repository.findAll();
-
         List<UserDTO> usersDtos = users.stream()
                 .map(UserMapper::userToDto)
                 .collect(Collectors.toList());
         return usersDtos;
     }
-
-
     public UserDTO createUser(UserDTO userDto){
         User userValidated = validateUserByEmail(userDto);
         if (userValidated == null){
@@ -65,9 +62,6 @@ public class UserService {
                 userToModify.setName(dto.getName());
             }
 
-            if (dto.getSurname() != null){
-                userToModify.setSurname(dto.getSurname());
-            }
 
             if (dto.getEmail() != null){
                 userToModify.setEmail(dto.getEmail());
@@ -80,6 +74,20 @@ public class UserService {
             if (dto.getDni() != null){
                 userToModify.setDni(dto.getDni());
             }
+
+
+            if (dto.getDate() != null){
+                userToModify.setDate(dto.getDate());
+            }
+
+            if (dto.getDirection() != null){
+                userToModify.setDirection(dto.getDirection());
+            }
+
+            if (dto.getCount() != null){
+                userToModify.setCount(dto.getCount());
+            }
+
 
             User userModified = repository.save(userToModify);
 

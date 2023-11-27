@@ -10,16 +10,15 @@ import lombok.Setter;
 public class UserDTO {
 
     private Long id;
-
-    private String email;
-
-    private String password;
-
     private String name;
-
-    private String surname;
-
+    private String email;
+    private String password;
     private String dni;
+
+    private String date;
+    private String direction;
+    private String count;
+
 
 
 }

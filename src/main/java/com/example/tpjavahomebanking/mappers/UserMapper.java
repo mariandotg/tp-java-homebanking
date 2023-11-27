@@ -11,10 +11,15 @@ public class UserMapper {
     public static User dtoToUser(UserDTO dto){
         User user = new User();
         user.setName(dto.getName());
-        user.setSurname(dto.getSurname());
-        user.setDni(dto.getDni());
         user.setEmail(dto.getEmail());
         user.setPassword(dto.getPassword());
+        user.setDni(dto.getDni());
+
+        user.setDate(dto.getDate());
+        user.setDirection(dto.getDirection());
+        user.setCount(dto.getCount());
+
+
         return user;
     }
 
@@ -22,10 +27,15 @@ public class UserMapper {
         UserDTO dto = new UserDTO();
         dto.setId(user.getId());
         dto.setName(user.getName());
-        dto.setSurname(user.getSurname());
-        dto.setDni(user.getDni());
         dto.setEmail(user.getEmail());
         dto.setPassword(user.getPassword());
+        dto.setDni(user.getDni());
+
+        dto.setDate(user.getDate());
+        dto.setDirection(user.getDirection());
+        dto.setCount(user.getCount());
+
+
         return dto;
     }
 
