@@ -2,7 +2,6 @@ package com.example.tpjavahomebanking.controllers;
 
 import com.example.tpjavahomebanking.models.dtos.UserDTO;
 import com.example.tpjavahomebanking.sevices.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +12,8 @@ import java.util.List;
 @RequestMapping("/api/users")
 public class UserController {
 
-    //el autowired no es recomendable
-    @Autowired
+
+
     private final UserService service;
 
     public UserController(UserService service){
