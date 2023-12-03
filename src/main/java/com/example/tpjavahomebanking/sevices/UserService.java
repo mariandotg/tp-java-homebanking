@@ -1,11 +1,11 @@
 package com.example.tpjavahomebanking.sevices;
 
 import com.example.tpjavahomebanking.exceptions.UserNotExistsException;
+import com.example.tpjavahomebanking.exceptions.UserNotFoundException;
 import com.example.tpjavahomebanking.mappers.UserMapper;
 import com.example.tpjavahomebanking.models.User;
 import com.example.tpjavahomebanking.models.dtos.UserDTO;
 import com.example.tpjavahomebanking.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,34 +14,58 @@ import java.util.stream.Collectors;
 @Service
 public class UserService {
 
-    @Autowired
+
     private UserRepository repository;
+    public UserService(UserRepository repository){
+        this.repository = repository;
+    }
+
+
 
     public List<UserDTO> getUsers(){
-
         List<User> users = repository.findAll();
-        List<UserDTO> usersDtos = users.stream()
+        return users.stream()
+                .map(UserMapper::userToDto)
+                .collect(Collectors.toList());
+    }
+
+
+   /*antiguo
+    public List<UserDTO> getUsers(){
+        List<User> users = repository.findAll();
+        List<UserDTO> usersDtos;
+        usersDtos = users.stream()
                 .map(UserMapper::userToDto)
                 .collect(Collectors.toList());
         return usersDtos;
     }
+ */
+    /*antiguo
+    public UserDTO getUserById(Long id) {
+        User entity = repository.findById(id).get();
+        return UserMapper.userToDto(entity);
+    }
+ */
+
+    public UserDTO getUserById(Long id){
+        User user = repository.findById(id).orElseThrow(() ->
+                new UserNotFoundException("Usuario no se encuentra con el id: " + id));
+        return UserMapper.userToDto(user);
+    }
+
+
+
+
     public UserDTO createUser(UserDTO userDto){
         User userValidated = validateUserByEmail(userDto);
         if (userValidated == null){
             User userSaved = repository.save(UserMapper.dtoToUser(userDto));
             return UserMapper.userToDto(userSaved);
         } else{
-            throw new UserNotExistsException("Usuario con mail: " + userDto.getEmail() + " ya existe");
+            throw new UserNotExistsException("Usuario con mail: " + userDto.getEmail + " ya existe");
         }
 
     }
-
-
-    public UserDTO getUserById(Long id) {
-        User entity = repository.findById(id).get();
-        return UserMapper.userToDto(entity);
-    }
-
 
     public String deleteUser(Long id){
         if (repository.existsById(id)){
@@ -98,6 +122,9 @@ public class UserService {
     }
 
     public User validateUserByEmail(UserDTO dto){
+
         return repository.findByEmail(dto.getEmail());
+
+
     }
 }

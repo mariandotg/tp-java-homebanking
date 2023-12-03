@@ -1,17 +1,17 @@
 package com.example.tpjavahomebanking.models.dtos;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
+@Builder
 public class UserDTO {
 
     private Long id;
     private String name;
-    private String email;
+    public String email;
     private String password;
     private String dni;
 

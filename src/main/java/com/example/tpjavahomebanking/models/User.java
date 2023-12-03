@@ -1,13 +1,15 @@
 package com.example.tpjavahomebanking.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "usuarios")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class User {
 
     @Id
@@ -35,5 +37,10 @@ public class User {
     @Column(name="listado_de_cuentas")
     private String count;
 
+
+
+
+    //  @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
+   // private List<Account> accounts;
 
 }
