@@ -20,16 +20,6 @@ public class UserService {
         this.repository = repository;
     }
 
-
-
-    public List<UserDTO> getUsers(){
-        List<User> users = repository.findAll();
-        return users.stream()
-                .map(UserMapper::userToDto)
-                .collect(Collectors.toList());
-    }
-
-
    /*antiguo
     public List<UserDTO> getUsers(){
         List<User> users = repository.findAll();
@@ -39,7 +29,17 @@ public class UserService {
                 .collect(Collectors.toList());
         return usersDtos;
     }
- */
+*/
+    public List<UserDTO> getUsers(){
+        List<User> users = repository.findAll();
+        return users.stream()
+                .map(UserMapper::userToDto)
+                .collect(Collectors.toList());
+    }
+
+
+
+
     /*antiguo
     public UserDTO getUserById(Long id) {
         User entity = repository.findById(id).get();
@@ -57,8 +57,9 @@ public class UserService {
 
 
     public UserDTO createUser(UserDTO userDto){
-        User userValidated = validateUserByEmail(userDto);
-        if (userValidated == null){
+        User userValidEmail = validateUserByEmail(userDto);
+        User userValiDni = validateUserByEmail(userDto);
+        if (userValidEmail == null){
             User userSaved = repository.save(UserMapper.dtoToUser(userDto));
             return UserMapper.userToDto(userSaved);
         } else{
@@ -127,4 +128,16 @@ public class UserService {
 
 
     }
+
+    public User validateUserByDni(UserDTO dto){
+
+        return repository.findByDni(dto.getDni());
+
+
+    }
+
+
+
+
+
 }
