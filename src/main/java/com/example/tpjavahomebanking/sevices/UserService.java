@@ -20,16 +20,9 @@ public class UserService {
         this.repository = repository;
     }
 
-   /*antiguo
-    public List<UserDTO> getUsers(){
-        List<User> users = repository.findAll();
-        List<UserDTO> usersDtos;
-        usersDtos = users.stream()
-                .map(UserMapper::userToDto)
-                .collect(Collectors.toList());
-        return usersDtos;
-    }
-*/
+
+
+
     public List<UserDTO> getUsers(){
         List<User> users = repository.findAll();
         return users.stream()
@@ -40,33 +33,37 @@ public class UserService {
 
 
 
-    /*antiguo
-    public UserDTO getUserById(Long id) {
-        User entity = repository.findById(id).get();
-        return UserMapper.userToDto(entity);
-    }
- */
 
-    public UserDTO getUserById(Long id){
-        User user = repository.findById(id).orElseThrow(() ->
-                new UserNotFoundException("Usuario no se encuentra con el id: " + id));
-        return UserMapper.userToDto(user);
-    }
+        public UserDTO getUserById(Long id){
+            User user = repository.findById(id).orElseThrow(() ->
+                    new UserNotFoundException("Usuario no se encuentra con el id: " + id));
+            return UserMapper.userToDto(user);
+
+
 
 
 
 
     public UserDTO createUser(UserDTO userDto){
         User userValidEmail = validateUserByEmail(userDto);
-        User userValiDni = validateUserByEmail(userDto);
+
         if (userValidEmail == null){
             User userSaved = repository.save(UserMapper.dtoToUser(userDto));
             return UserMapper.userToDto(userSaved);
         } else{
-            throw new UserNotExistsException("Usuario con mail: " + userDto.getEmail + " ya existe");
+            throw new UserNotExistsException("Usuario con mail: " + userDto.getEmail() + " ya existe");
         }
 
+
+
+
+
+
+
     }
+
+
+
 
     public String deleteUser(Long id){
         if (repository.existsById(id)){
@@ -75,6 +72,7 @@ public class UserService {
         } else {
             throw new UserNotExistsException("El usuario a eliminar elegido no existe");
         }
+
 
     }
 
