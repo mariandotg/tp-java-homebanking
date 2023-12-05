@@ -1,4 +1,4 @@
-package com.example.tpjavahomebanking.sevices;
+package com.example.tpjavahomebanking.service;
 
 import com.example.tpjavahomebanking.exceptions.UserNotExistsException;
 import com.example.tpjavahomebanking.exceptions.UserNotFoundException;

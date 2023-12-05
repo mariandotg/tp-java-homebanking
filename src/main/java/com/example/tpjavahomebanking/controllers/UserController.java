@@ -1,7 +1,7 @@
 package com.example.tpjavahomebanking.controllers;
 
 import com.example.tpjavahomebanking.models.dtos.UserDTO;
-import com.example.tpjavahomebanking.sevices.UserService;
+import com.example.tpjavahomebanking.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
