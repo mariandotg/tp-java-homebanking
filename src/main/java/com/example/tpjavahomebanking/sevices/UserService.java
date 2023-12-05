@@ -34,12 +34,12 @@ public class UserService {
 
 
 
-        public UserDTO getUserById(Long id){
+        public UserDTO getUserById(Long id) {
             User user = repository.findById(id).orElseThrow(() ->
                     new UserNotFoundException("Usuario no se encuentra con el id: " + id));
             return UserMapper.userToDto(user);
 
-
+        }
 
 
 
@@ -53,9 +53,6 @@ public class UserService {
         } else{
             throw new UserNotExistsException("Usuario con mail: " + userDto.getEmail() + " ya existe");
         }
-
-
-
 
 
 

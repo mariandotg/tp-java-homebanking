@@ -27,10 +27,13 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(lista);
     }
 
+
+
     @GetMapping(value = "/{id}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable Long id){
         return ResponseEntity.status(HttpStatus.OK).body(service.getUserById(id));
     }
+
 
 
     @PostMapping
