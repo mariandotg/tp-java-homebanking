@@ -1,0 +1,95 @@
+[33mcommit 08bcc832b5cd6cc4acc030add26bbbc5377d2215[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/2-desarrollar-el-controlador-del-user[m[33m, [m[1;31morigin/feature/2-desarrollar-el-controlador-del-user[m[33m)[m
+Author: Elian Bustos <elianbustos1803@gmail.com>
+Date:   Tue Dec 5 15:57:02 2023 -0300
+
+    cambio del nombre service
+
+[33mcommit 1457d9cfb2f48d7cc245f6ef5d3869bd2abd68e0[m
+Author: Elian Bustos <elianbustos1803@gmail.com>
+Date:   Tue Dec 5 15:53:10 2023 -0300
+
+    arreglo PostMapping
+
+[33mcommit 4287d53876cab0554a89549c59dab0f3550c5bda[m
+Author: Elian Bustos <elianbustos1803@gmail.com>
+Date:   Mon Dec 4 20:34:01 2023 -0300
+
+    factorizar mapper y servicio
+
+[33mcommit 7bc20d94bdbd5b0ff985f53190b6dbabe9172bc2[m
+Author: Elian Bustos <elianbustos1803@gmail.com>
+Date:   Mon Dec 4 10:19:11 2023 -0300
+
+    cambios
+
+[33mcommit 3dbc35655543afc8289dc155acd9157f69491248[m
+Author: Elian Bustos <elianbustos1803@gmail.com>
+Date:   Sat Dec 2 21:07:30 2023 -0300
+
+    refactorizar
+
+[33mcommit b7d450f7782681bc6bd508a8ef349084401f6c99[m
+Author: Elian Bustos <elianbustos1803@gmail.com>
+Date:   Fri Dec 1 22:39:20 2023 -0300
+
+    arreglos
+
+[33mcommit f1834639f97afa7e63d96fdc9f81a0fb36a7a479[m
+Author: Elian Bustos <elianbustos1803@gmail.com>
+Date:   Fri Dec 1 21:20:34 2023 -0300
+
+    arreglos
+
+[33mcommit 263d6490023a1eab78b0bed0dcf5f82312fd1b00[m
+Author: Elian Bustos <elianbustos1803@gmail.com>
+Date:   Thu Nov 30 11:48:54 2023 -0300
+
+    Added application.properties.example
+
+[33mcommit a495767af00c6a27516bff78a7329784d47178f0[m
+Author: Elian Bustos <elianbustos1803@gmail.com>
+Date:   Thu Nov 30 11:10:44 2023 -0300
+
+    cambios
+
+[33mcommit bbb9745d7e83f403eb01c20ff97a8e7459cd4014[m
+Author: Elian Bustos <elianbustos1803@gmail.com>
+Date:   Sun Nov 26 21:32:47 2023 -0300
+
+    agregando atributos
+
+[33mcommit 1820867ec67ac8eb368fb6c6766a8bc16db6a383[m
+Author: Elian Bustos <elianbustos1803@gmail.com>
+Date:   Sat Nov 25 23:09:06 2023 -0300
+
+    correccion del import
+
+[33mcommit b399e0ef9404682bb29070c78e601169df335b26[m
+Author: Elian Bustos <elianbustos1803@gmail.com>
+Date:   Sat Nov 25 16:46:19 2023 -0300
+
+    lo que hizo el profesor
+
+[33mcommit 4c13291f11bccb428c514d436113e788fbf09387[m
+Author: RicJac <ricardo.2323@hotmail.com>
+Date:   Wed Nov 22 19:24:48 2023 -0300
+
+    agrego 1 archivo
+
+[33mcommit e0769f4d88956658d9fbda875f7f5ce63688f800[m
+Author: Elian Bustos <elianbustos1803@gmail.com>
+Date:   Wed Nov 22 18:30:45 2023 -0300
+
+    cambio de salto de linea
+
+[33mcommit b5a2b6e0b30e0b2e5eed93fde15a638ed8ed88b8[m
+Author: Mariano Guillaume <marianguillaume.m@gmail.com>
+Date:   Wed Nov 22 02:48:06 2023 -0300
+
+    Added README.md file
+
+[33mcommit 0a4cd9801ca754f755748ea477f4832c93d28a1e[m
+Author: Mariano Guillaume <marianguillaume.m@gmail.com>
+Date:   Wed Nov 22 02:38:38 2023 -0300
+
+    first commit
