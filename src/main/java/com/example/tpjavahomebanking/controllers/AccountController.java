@@ -1,12 +1,12 @@
 package com.example.tpjavahomebanking.controllers;
-import com.example.tpjavahomebanking.models.Account;
+
 import com.example.tpjavahomebanking.models.dtos.AccountDTO;
 import com.example.tpjavahomebanking.service.AccountService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+
 @RestController
 @RequestMapping("/api/accounts")
 public class AccountController {

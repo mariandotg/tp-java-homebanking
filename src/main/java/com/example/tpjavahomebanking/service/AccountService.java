@@ -1,12 +1,8 @@
 package com.example.tpjavahomebanking.service;
 import com.example.tpjavahomebanking.exceptions.UserNotExistsException;
 import com.example.tpjavahomebanking.mappers.AccountMapper;
-import com.example.tpjavahomebanking.mappers.UserMapper;
-import com.example.tpjavahomebanking.models.Account;
-import com.example.tpjavahomebanking.models.User;
 import com.example.tpjavahomebanking.models.dtos.AccountDTO;
-import com.example.tpjavahomebanking.models.dtos.UserDTO;
-import com.example.tpjavahomebanking.models.enums.AccountType;
+import com.example.tpjavahomebanking.models.entity.Account;
 import com.example.tpjavahomebanking.repositories.AccountRepository;
 import org.springframework.stereotype.Service;
 

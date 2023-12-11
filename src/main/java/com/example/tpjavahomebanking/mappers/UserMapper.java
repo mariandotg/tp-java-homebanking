@@ -1,6 +1,6 @@
 package com.example.tpjavahomebanking.mappers;
 
-import com.example.tpjavahomebanking.models.User;
+import com.example.tpjavahomebanking.models.entity.User;
 import com.example.tpjavahomebanking.models.dtos.UserDTO;
 import lombok.experimental.UtilityClass;
 

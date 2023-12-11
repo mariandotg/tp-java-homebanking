@@ -1,7 +1,6 @@
 package mappers;
 import com.example.tpjavahomebanking.mappers.AccountMapper;
 import com.example.tpjavahomebanking.models.dtos.AccountDTO;
-import com.example.tpjavahomebanking.models.Account;
 import com.example.tpjavahomebanking.models.enums.AccountType;
 import org.junit.jupiter.api.Test;
 

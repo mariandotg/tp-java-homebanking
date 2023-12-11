@@ -1,22 +1,18 @@
 package com.example.tpjavahomebanking.models.entity;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
-
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Builder
-
-
 public class Transfer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +21,7 @@ public class Transfer {
     private Long id;
     private Long origin;
     private Long target;
-    private Long date;
+    private Date date;
 
     private BigDecimal amount;
 
