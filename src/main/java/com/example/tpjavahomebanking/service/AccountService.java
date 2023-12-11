@@ -3,6 +3,7 @@ import com.example.tpjavahomebanking.exceptions.UserNotExistsException;
 import com.example.tpjavahomebanking.mappers.AccountMapper;
 import com.example.tpjavahomebanking.models.dtos.AccountDTO;
 import com.example.tpjavahomebanking.models.entity.Account;
+import com.example.tpjavahomebanking.models.enums.AccountType;
 import com.example.tpjavahomebanking.repositories.AccountRepository;
 import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
@@ -24,8 +25,10 @@ public class AccountService {
     }
 
     public AccountDTO createAccount(AccountDTO dto) {
-        // TODO: REFACTOR
-        //dto.setType(AccountType.SAVINGS_BANK);
+        if(dto.getType() == null) {
+            dto.setType(AccountType.SAVINGS_BANK);
+        }
+
         dto.setAmount(BigDecimal.ZERO);
         Account newAccount = repository.save(AccountMapper.dtoToAccount(dto));
         return AccountMapper.accountToDto(newAccount);
@@ -41,7 +44,6 @@ public class AccountService {
             repository.deleteById(id);
             return "La cuenta con id: " + id + " ha sido eliminada";
         } else {
-            // TODO: REFACTOR create new exception
             throw new UserNotExistsException("La cuenta a eliminar no existe");
         }
 
@@ -50,9 +52,7 @@ public class AccountService {
     public AccountDTO updateAccount(Long id, AccountDTO dto) {
         if (repository.existsById(id)) {
             Account accountToModify = repository.findById(id).get();
-            // Validar qué datos no vienen en null para setearlos al objeto ya creado
 
-            // Logica del Patch
             if (dto.getAlias() != null) {
                 accountToModify.setAlias(dto.getAlias());
             }

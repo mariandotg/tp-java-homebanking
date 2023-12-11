@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "cuentas")
 @Getter
