@@ -1,19 +1,15 @@
 package com.example.tpjavahomebanking.controllers;
 
-
-
 import com.example.tpjavahomebanking.models.dtos.TransferDTO;
 import com.example.tpjavahomebanking.service.TransferService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/transfers")
 public class TransferController {
-
     private final TransferService service;
 
     public TransferController(TransferService service){
@@ -31,7 +27,6 @@ public class TransferController {
         TransferDTO transfer = service.getTransferById(id);
         return ResponseEntity.status(HttpStatus.OK).body(transfer);
     }
-
 
     @PostMapping
     public ResponseEntity<TransferDTO> performTransfer(@RequestBody TransferDTO dto){

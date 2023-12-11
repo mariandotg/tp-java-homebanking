@@ -5,10 +5,10 @@ import com.example.tpjavahomebanking.models.dtos.AccountDTO;
 import com.example.tpjavahomebanking.models.entity.Account;
 import com.example.tpjavahomebanking.repositories.AccountRepository;
 import org.springframework.stereotype.Service;
-
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
+
 @Service
 public class AccountService {
     private final AccountRepository repository;

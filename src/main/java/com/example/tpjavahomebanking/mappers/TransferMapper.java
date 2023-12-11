@@ -1,13 +1,11 @@
 package com.example.tpjavahomebanking.mappers;
 
-
 import com.example.tpjavahomebanking.models.entity.Transfer;
 import com.example.tpjavahomebanking.models.dtos.TransferDTO;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class TransferMapper {
-
     public Transfer dtoToTransfer(TransferDTO dto){
         return Transfer.builder()
                 .amount(dto.getAmount())

@@ -2,6 +2,7 @@ package com.example.tpjavahomebanking.models.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.List;
 
 @Entity
 @Table(name = "usuarios")
@@ -11,7 +12,6 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -37,10 +37,6 @@ public class User {
     @Column(name="listado_de_cuentas")
     private String count;
 
-
-
-
-//@OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
-//private List<Account> accounts;
-
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Account> accounts;
 }

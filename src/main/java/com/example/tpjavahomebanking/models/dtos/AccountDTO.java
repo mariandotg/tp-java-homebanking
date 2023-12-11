@@ -1,9 +1,7 @@
 package com.example.tpjavahomebanking.models.dtos;
-import com.example.tpjavahomebanking.models.enums.AccountType;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
+import com.example.tpjavahomebanking.models.enums.AccountType;
+import lombok.*;
 import java.math.BigDecimal;
 
 @Getter

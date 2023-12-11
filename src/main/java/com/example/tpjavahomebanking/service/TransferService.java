@@ -11,14 +11,12 @@ import com.example.tpjavahomebanking.repositories.AccountRepository;
 import com.example.tpjavahomebanking.repositories.TransferRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 public class TransferService {
-
     private final TransferRepository repository;
 
     private final AccountRepository accountRepository;

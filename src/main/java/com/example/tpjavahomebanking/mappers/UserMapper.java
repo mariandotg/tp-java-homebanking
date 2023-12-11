@@ -6,7 +6,6 @@ import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class UserMapper {
-
     public static UserDTO userToDto(User user){
         return UserDTO.builder()
                 .id(user.getId())
@@ -19,6 +18,7 @@ public class UserMapper {
                 .count(user.getCount())
                 .build();
     }
+
     public static User dtoToUser(UserDTO dto){
         return User.builder()
                 .name(dto.getName())
